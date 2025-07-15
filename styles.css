@@ -18,6 +18,15 @@ body {
     font-size: 11px;
     width: 100%;
     text-align: center;
+    background-color: white;
+    color: black;
+    border-radius: 0.25rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+.monto-btn:hover {
+    background-color: #e2e8f0;
 }
 
 .monto-dropdown {
@@ -28,6 +37,7 @@ body {
     border: 1px solid #e2e8f0;
     border-radius: 0.25rem;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    color: black;
 }
 
 .panel-box {
@@ -36,6 +46,7 @@ body {
     background: white;
     padding: 0.5rem;
     margin-bottom: 0.75rem;
+    color: black;
 }
 
 #crear-usuario {
@@ -61,44 +72,164 @@ body {
     opacity: 1;
 }
 
-/* Si no usás Tailwind, agregar algo así en tu CSS para el panel */
-
 #panel-bonif {
-  background-color: #e2e8f0; /* gris claro */
-  border-radius: 0.375rem; /* rounded */
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-  margin-top: 0.5rem;
-  width: 8rem; /* 128px */
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
-  position: absolute; /* si quieres que flote, sino quitar */
+  min-width: 120px;
+  background-color: white;
+  border-radius: 0.25rem;
+  border: 1px solid #e2e8f0;
+  padding: 0.25rem;
+  color: black;
+}
+
+/* Botón flotante del foco */
+#btn-modo-oscuro {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background-color: #facc15;
+  color: #1f2937;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
   z-index: 1000;
 }
+#btn-modo-oscuro:hover {
+  background-color: #eab308;
+  color: #111827;
+}
 
-#panel-bonif button {
-  display: block;
-  width: 100%;
-  padding: 0.25rem 0.75rem;
-  text-align: left;
-  font-size: 0.875rem;
-  color: #2d3748; /* gray-800 */
-  background: transparent;
+/* Modo oscuro */
+.modo-oscuro {
+  background-color: #1f2937 !important;
+  color: #d1d5db !important;
+}
+
+.modo-oscuro input,
+.modo-oscuro select,
+.modo-oscuro textarea {
+  background-color: #41464e !important;
+  color: #e4dddd !important;
+  border-color: #6b7280 !important;
+}
+
+.modo-oscuro .panel-box {
+  background-color: #1d1f22 !important;
+  color: #d1d5db !important;
+  border-color: #4b5563 !important;
+}
+
+/* Títulos legibles en modo oscuro */
+.modo-oscuro .panel-box h2 {
+  color: #c5cad3 !important;
+}
+
+/* Fondo y texto para panel de bonificación */
+.modo-oscuro #panel-bonif {
+  background-color: #374151 !important;
+  border: 1px solid #4b5563 !important;
+  color: #d1d5db !important;
+}
+
+/* Botones de bonificación */
+.modo-oscuro .bonif-option {
+  background-color: #4b5563 !important;
+  color: #d1d5db !important;
+  border-radius: 4px;
   border: none;
   cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  transition: background-color 0.2s ease;
+}
+.modo-oscuro .bonif-option:hover {
+  background-color: #6b7280 !important;
+  color: #f3f4f6 !important;
 }
 
-#panel-bonif button:hover {
-  background-color: #f6e05e; /* amarillo claro */
-  color: #000;
-}
-#contenido-historial-usuario {
-  font-size: 0.75rem; /* Tamaño de fuente más pequeño (12px aprox) */
-  line-height: 1.1;
-  padding: 0;
+/* Fondo y texto para dropdown de monto en modo oscuro */
+.modo-oscuro #monto-dropdown {
+  background-color: #374151 !important;
+  border: 1px solid #3c3d3d !important;
+  color: #d1d5db !important;
+  border-radius: 0.25rem;
 }
 
-#contenido-historial-usuario > div {
-  padding: 0.25rem 0.5rem; /* Menos padding */
-  margin-bottom: 0.15rem; /* Menos separación entre items */
-  border-radius: 0.25rem; /* bordes un poco más pequeños */
+/* Botones monto en modo oscuro */
+.modo-oscuro .monto-btn {
+  background-color: #4b5563 !important;
+  color: #d1d5db !important;
+  border-radius: 0.25rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
 }
+.modo-oscuro .monto-btn:hover {
+  background-color: #6b7280 !important;
+  color: #f3f4f6 !important;
+}
+
+/* Fondo oscuro para Info de Retiros y Personalizar Datos */
+.modo-oscuro #info-retiros,
+.modo-oscuro #seccion-personalizar {
+  background-color: #1d1f22 !important;
+  color: #dfe2e6 !important;
+  box-shadow: none !important;
+}
+
+/* Inputs en Personalizar Datos */
+.modo-oscuro #seccion-personalizar input {
+  background-color: #1d1f22 !important;
+  color: #d1d5db !important;
+  border-color: #6b7280 !important;
+  caret-color: #d1d5db !important;
+}
+
+.modo-oscuro #modal-historial-usuario > div {
+  background-color: #2f3031 !important;  /* fondo oscuro para el contenido */
+  color: #d1d5db !important;             /* texto claro */
+  border-color: #4b5563 !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.7);
+}
+
+/* Contenido del historial dentro del modal */
+.modo-oscuro #contenido-historial-usuario {
+  color: #d1d5db !important;
+  background-color: transparent !important; /* que no sobrescriba el fondo padre */
+  scrollbar-color: #6b7280 #2f3031; /* scroll oscuro */
+}
+
+/* Botón cerrar */
+.modo-oscuro #cerrar-modal-usuario {
+  color: #d1d5db !important;
+}
+
+#toast {
+    visibility: hidden;
+    min-width: 250px;
+    background-color: #333;
+    color: #fff;
+    text-align: left;
+    border-radius: 4px;
+    padding: 12px 24px;
+    position: fixed;
+    z-index: 9999;
+    right: 20px;
+    bottom: 30px;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s;
+    white-space: pre-line; /* para respetar saltos de línea */
+  }
+
+  #toast.show {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  
+

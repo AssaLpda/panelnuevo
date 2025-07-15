@@ -1205,7 +1205,88 @@ function generarPDFRetiros(retiros, turno) {
   doc.save(`retiros_${turno.replace("-", "_")}.pdf`);
 }
 
+// Modo oscuro toggle
+const btnModoOscuro = document.getElementById('btn-modo-oscuro');
+const body = document.body;
 
+// Cargar estado guardado en localStorage (si existe)
+if (localStorage.getItem('modoOscuro') === 'true') {
+  body.classList.add('modo-oscuro');
+}
+
+btnModoOscuro.addEventListener('click', () => {
+  body.classList.toggle('modo-oscuro');
+  // Guardar estado
+  const modoOscuroActivo = body.classList.contains('modo-oscuro');
+  localStorage.setItem('modoOscuro', modoOscuroActivo);
+});
+
+// Funciones que reciben el usuario y devuelven el mensaje
+  const mensajesReferidos = [
+    (usuario) => 
+`🎉 ¡Sumate a nuestro programa de referidos y llevate fichas gratis!
+
+Por cada amigo que invites y haga su primera carga, te regalamos 3000 fichas para usar en tu próxima recarga 🎰🎁
+
+Solo pediles que mencionen tu nombre de usuario "${usuario}" al cargar para que puedas recibir la bonificación ☘️
+
+El bono se activa después de la carga inicial del referido y se suma en tu siguiente recarga.
+
+Recordanos tus referidos al cargar para que te acreditemos el premio.
+
+Las bonificaciones son solo para jugar, no se pueden retirar.`,
+
+    (usuario) =>
+`🎉 ¡Invitá a tus amigos y ganá fichas gratis con nuestro plan de referidos!
+
+Cada amigo que venga de tu parte y realice su primera carga te suma 3000 fichas extras para tu próxima recarga 🎰🎁
+
+Solo asegurate que digan tu nombre de usuario "${usuario}" al hacer la carga para acreditarte el bono ☘️
+
+La bonificación se acredita luego de la primera carga del referido y se suma a tu siguiente recarga.
+
+No olvides avisarnos quiénes son tus referidos al momento de cargar para sumar el bono.
+
+Las fichas del bono solo pueden usarse para jugar, no para retirar.`,
+
+    (usuario) =>
+`🎉 ¡Sumá fichas gratis invitando amigos con nuestro plan de referidos!
+
+Por cada amigo que invites y realice su primer depósito, recibís 3000 fichas para usar en tu próxima carga 🎰🎁
+
+Pídanle que mencionen tu usuario "${usuario}" para poder acreditar la bonificación ☘️
+
+El bono se aplica luego de la primera carga del referido y se acumula en tu siguiente recarga.
+
+Recordanos tus referidos cuando hagas tu carga para agregar el bono.
+
+Las bonificaciones son para jugar, no para retirar.`
+  ];
+
+  const boton = document.getElementById('btn-info-referidos');
+  const toast = document.getElementById('toast');
+
+  // Cambiá este valor por el nombre de usuario real que quieras insertar
+  const nombreUsuario = "TuUsuario123";
+
+  function showToast(msg) {
+    toast.textContent = msg;
+    toast.classList.add('show');
+    setTimeout(() => {
+      toast.classList.remove('show');
+    }, 6000);
+  }
+
+  boton.addEventListener('click', () => {
+    const indice = Math.floor(Math.random() * mensajesReferidos.length);
+    const mensaje = mensajesReferidos[indice](nombreUsuario);
+
+    navigator.clipboard.writeText(mensaje).then(() => {
+      showToast('Mensaje de referidos copiado al portapapeles!');
+    }).catch(err => {
+      showToast('Error al copiar el mensaje: ' + err);
+    });
+  });
 
 
 

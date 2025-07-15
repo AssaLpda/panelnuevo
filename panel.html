@@ -16,6 +16,7 @@
     #panel-bonif {
       min-width: 120px;
     }
+
   </style>
 </head>
 <body class="bg-gray-50 p-2">
@@ -24,6 +25,7 @@
     // No hay usuario logueado, redirigir a login
     window.location.href = "index.html";
   }
+
 </script>
   <div class="max-w-4xl mx-auto space-y-3">
 
@@ -118,6 +120,11 @@
     </div>
   </div>
 
+  <!-- Botón flotante para alternar modo oscuro -->
+  <button id="btn-modo-oscuro" title="Alternar modo oscuro" aria-label="Alternar modo oscuro">
+    <i class="fas fa-lightbulb"></i>
+  </button>
+
   <!-- Modal Historial General -->
   <div id="modal-historial" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
     <div class="bg-white rounded-lg max-w-xl w-full p-4 relative max-h-[80vh] overflow-auto">
@@ -160,9 +167,14 @@
     <button id="btn-contactanos" class="btn-compact bg-blue-500 hover:bg-yellow-600 text-white rounded px-3 py-1 text-xs">
       Contactanos por el grupo
     </button>
+    <button id="btn-info-referidos" class="btn-compact bg-blue-500 hover:bg-yellow-600 text-white rounded px-3 py-1 text-xs">
+  INFO Referidos
+</button>
+
     <button id="btn-unirse" class="btn-compact bg-purple-500 hover:bg-purple-600 text-white rounded px-3 py-1 text-xs">
       Unirse al grupo
     </button>
+
   </div>
 </div>
 <div id="seccion-cbu" class="p-4 bg-gray-900 rounded-lg mt-4 text-white space-y-2">
@@ -184,7 +196,8 @@
     </button>
     <button id="btn-tope-retiros" class="bg-red-500 hover:bg-grey-600 text-white px-3 py-1 text-xs rounded flex items-center gap-1">
       <i class="fas fa-ban"></i> Tope de retiros
-    </button>
+    
+
   </div>
 </div>
 
