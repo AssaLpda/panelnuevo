@@ -1,0 +1,104 @@
+body {
+    font-size: 13px;
+    line-height: 1.3;
+}
+
+.input-compact {
+    padding: 0.25rem 0.5rem;
+    height: 28px;
+}
+
+.btn-compact {
+    padding: 0.25rem 0.5rem;
+    font-size: 12px;
+}
+
+.monto-btn {
+    padding: 0.25rem 0.5rem;
+    font-size: 11px;
+    width: 100%;
+    text-align: center;
+}
+
+.monto-dropdown {
+    position: absolute;
+    z-index: 10;
+    width: 80px;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.25rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.panel-box {
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    background: white;
+    padding: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+#crear-usuario {
+    transition: all 0.2s ease;
+    width: 32px;
+    height: 28px;
+}
+
+/* Estilo para notificación de error */
+.bg-red-500 {
+    background-color: #ef4444;
+}
+
+/* Transición para notificación */
+#notificacion {
+    transition: all 0.3s ease;
+    transform: translateY(20px);
+    opacity: 0;
+}
+
+#notificacion:not(.hidden) {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Si no usás Tailwind, agregar algo así en tu CSS para el panel */
+
+#panel-bonif {
+  background-color: #e2e8f0; /* gris claro */
+  border-radius: 0.375rem; /* rounded */
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  margin-top: 0.5rem;
+  width: 8rem; /* 128px */
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  position: absolute; /* si quieres que flote, sino quitar */
+  z-index: 1000;
+}
+
+#panel-bonif button {
+  display: block;
+  width: 100%;
+  padding: 0.25rem 0.75rem;
+  text-align: left;
+  font-size: 0.875rem;
+  color: #2d3748; /* gray-800 */
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+#panel-bonif button:hover {
+  background-color: #f6e05e; /* amarillo claro */
+  color: #000;
+}
+#contenido-historial-usuario {
+  font-size: 0.75rem; /* Tamaño de fuente más pequeño (12px aprox) */
+  line-height: 1.1;
+  padding: 0;
+}
+
+#contenido-historial-usuario > div {
+  padding: 0.25rem 0.5rem; /* Menos padding */
+  margin-bottom: 0.15rem; /* Menos separación entre items */
+  border-radius: 0.25rem; /* bordes un poco más pequeños */
+}
