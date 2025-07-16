@@ -896,55 +896,85 @@ modalTope.addEventListener('click', (e) => {
 
 let modoEditarDatos = false;
 
-document.getElementById('btn-guardar-datos').addEventListener('click', async () => {
-  const usuario = document.getElementById('usuario-input').value.trim().toLowerCase();
-  const titular = document.getElementById('input-titular').value.trim();
-  const cbu = document.getElementById('input-cbu').value.trim();
-  const alias = document.getElementById('input-alias').value.trim();
+const titularInput = document.getElementById('input-titular');
+const cbuInput = document.getElementById('input-cbu');
+const aliasInput = document.getElementById('input-alias');
+const boton = document.getElementById('btn-guardar-datos');
 
-  
-  const titularInput = document.getElementById('input-titular');
-  const cbuInput = document.getElementById('input-cbu');
-  const aliasInput = document.getElementById('input-alias');
-  const boton = document.getElementById('btn-guardar-datos');
+async function cargarDatosBancarios() {
+  try {
+    const snapshot = await firebase.database().ref('datosbancarios').get();
+    if (snapshot.exists()) {
+      const datos = snapshot.val();
+      titularInput.value = datos.titular || '';
+      cbuInput.value = datos.cbu || '';
+      aliasInput.value = datos.alias || '';
 
+      // Bloqueamos inputs al cargar datos
+      titularInput.disabled = true;
+      cbuInput.disabled = true;
+      aliasInput.disabled = true;
+      boton.textContent = 'Editar Datos';
+      modoEditarDatos = true;
+    } else {
+      // No hay datos guardados aún
+      titularInput.value = '';
+      cbuInput.value = '';
+      aliasInput.value = '';
+      titularInput.disabled = false;
+      cbuInput.disabled = false;
+      aliasInput.disabled = false;
+      boton.textContent = 'Guardar Datos';
+      modoEditarDatos = false;
+    }
+  } catch (error) {
+    console.error('Error al cargar datos bancarios:', error);
+    mostrarNotificacion('Error al cargar datos bancarios', 'error');
+  }
+}
+
+boton.addEventListener('click', async () => {
   if (!modoEditarDatos) {
-    // Guardar los datos
+    // Guardar datos
+    const titular = titularInput.value.trim();
+    const cbu = cbuInput.value.trim();
+    const alias = aliasInput.value.trim();
+
     if (!titular || !cbu || !alias) {
-      mostrarNotificacion("Completá todos los campos", "error");
+      mostrarNotificacion('Completá todos los campos', 'error');
       return;
     }
 
     try {
-      await firebase.database().ref("usuarios/" + usuario).update({
-        titular: titular,
-        cbu: cbu,
-        alias: alias
+      await firebase.database().ref('datosbancarios').set({
+        titular,
+        cbu,
+        alias
       });
+      mostrarNotificacion('Datos bancarios guardados correctamente ✅');
 
-      mostrarNotificacion("Datos guardados correctamente ✅");
-
-      // Bloquea los campos
       titularInput.disabled = true;
       cbuInput.disabled = true;
       aliasInput.disabled = true;
-
-      boton.textContent = "Editar Datos";
+      boton.textContent = 'Editar Datos';
       modoEditarDatos = true;
     } catch (error) {
-      console.error("Error al guardar datos:", error);
-      mostrarNotificacion("Error al guardar datos", "error");
+      console.error('Error al guardar datos bancarios:', error);
+      mostrarNotificacion('Error al guardar datos bancarios', 'error');
     }
   } else {
-    // Modo edición
+    // Modo editar
     titularInput.disabled = false;
     cbuInput.disabled = false;
     aliasInput.disabled = false;
-
-    boton.textContent = "Guardar Datos";
+    boton.textContent = 'Guardar Datos';
     modoEditarDatos = false;
   }
 });
+
+// Llamar esta función al cargar la página
+cargarDatosBancarios();
+
 
 document.getElementById('btn-cbu').addEventListener('click', async () => {
   const titular = document.getElementById('input-titular').value.trim();
@@ -1221,14 +1251,27 @@ btnModoOscuro.addEventListener('click', () => {
   localStorage.setItem('modoOscuro', modoOscuroActivo);
 });
 
-// Funciones que reciben el usuario y devuelven el mensaje
-  const mensajesReferidos = [
-    (usuario) => 
-`🎉 ¡Sumate a nuestro programa de referidos y llevate fichas gratis!
+
+const btnInfoReferidos = document.getElementById('btn-info-referidos');
+
+const mensajes = [
+  `🎉 ¡Sumá fichas gratis invitando amigos con nuestro plan de referidos!
+
+Por cada amigo que invites y realice su primer depósito, recibís 3000 fichas para usar en tu próxima carga 🎰🎁
+
+Pídanle que mencionen tu usuario para poder acreditar la bonificación ☘️
+
+El bono se aplica luego de la primera carga del referido y se acumula en tu siguiente recarga.
+
+Recordanos tus referidos cuando hagas tu carga para agregar el bono.
+
+Las bonificaciones son para jugar, no para retirar`,
+
+  `🎉 ¡Sumate a nuestro programa de referidos y llevate fichas gratis!
 
 Por cada amigo que invites y haga su primera carga, te regalamos 3000 fichas para usar en tu próxima recarga 🎰🎁
 
-Solo pediles que mencionen tu nombre de usuario "${usuario}" al cargar para que puedas recibir la bonificación ☘️
+Solo pediles que mencionen tu nombre de usuario al cargar para que puedas recibir la bonificación ☘️
 
 El bono se activa después de la carga inicial del referido y se suma en tu siguiente recarga.
 
@@ -1236,57 +1279,30 @@ Recordanos tus referidos al cargar para que te acreditemos el premio.
 
 Las bonificaciones son solo para jugar, no se pueden retirar.`,
 
-    (usuario) =>
-`🎉 ¡Invitá a tus amigos y ganá fichas gratis con nuestro plan de referidos!
+  `🎉 ¡Invitá a tus amigos y ganá fichas gratis con nuestro plan de referidos!
 
 Cada amigo que venga de tu parte y realice su primera carga te suma 3000 fichas extras para tu próxima recarga 🎰🎁
 
-Solo asegurate que digan tu nombre de usuario "${usuario}" al hacer la carga para acreditarte el bono ☘️
+Solo asegurate que digan tu nombre de usuario al hacer la carga para acreditarte el bono ☘️
 
 La bonificación se acredita luego de la primera carga del referido y se suma a tu siguiente recarga.
 
 No olvides avisarnos quiénes son tus referidos al momento de cargar para sumar el bono.
 
-Las fichas del bono solo pueden usarse para jugar, no para retirar.`,
+Las fichas del bono solo pueden usarse para jugar, no para retirar.`
+];
 
-    (usuario) =>
-`🎉 ¡Sumá fichas gratis invitando amigos con nuestro plan de referidos!
-
-Por cada amigo que invites y realice su primer depósito, recibís 3000 fichas para usar en tu próxima carga 🎰🎁
-
-Pídanle que mencionen tu usuario "${usuario}" para poder acreditar la bonificación ☘️
-
-El bono se aplica luego de la primera carga del referido y se acumula en tu siguiente recarga.
-
-Recordanos tus referidos cuando hagas tu carga para agregar el bono.
-
-Las bonificaciones son para jugar, no para retirar.`
-  ];
-
-  const boton = document.getElementById('btn-info-referidos');
-  const toast = document.getElementById('toast');
-
-  // Cambiá este valor por el nombre de usuario real que quieras insertar
-  const nombreUsuario = "TuUsuario123";
-
-  function showToast(msg) {
-    toast.textContent = msg;
-    toast.classList.add('show');
-    setTimeout(() => {
-      toast.classList.remove('show');
-    }, 6000);
+btnInfoReferidos.addEventListener('click', async () => {
+  const mensaje = mensajes[Math.floor(Math.random() * mensajes.length)];
+  try {
+    await navigator.clipboard.writeText(mensaje);
+    mostrarNotificacion("Mensaje copiado al portapapeles ✅");
+  } catch (err) {
+    mostrarNotificacion("Error al copiar el mensaje", "error");
   }
+});
 
-  boton.addEventListener('click', () => {
-    const indice = Math.floor(Math.random() * mensajesReferidos.length);
-    const mensaje = mensajesReferidos[indice](nombreUsuario);
 
-    navigator.clipboard.writeText(mensaje).then(() => {
-      showToast('Mensaje de referidos copiado al portapapeles!');
-    }).catch(err => {
-      showToast('Error al copiar el mensaje: ' + err);
-    });
-  });
 
   const mensajeDerivacion = `Hola, ¿cómo estás?
 Te pido que por favor envíes el comprobante al número principal junto con el nombre de usuario que se te asignó, así pueden cargarte al instante 👇
@@ -1312,6 +1328,23 @@ Para que sea más fácil, podés hacer clic en este link y te deriva directo a n
 
 
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
