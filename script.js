@@ -1288,6 +1288,23 @@ Las bonificaciones son para jugar, no para retirar.`
     });
   });
 
+  const mensajeDerivacion = `Hola, ¿cómo estás?
+Te pido que por favor envíes el comprobante al número principal junto con el nombre de usuario que se te asignó, así pueden cargarte al instante 👇
+
+📲 +543813595069
+
+Para que sea más fácil, podés hacer clic en este link y te deriva directo a nuestro chat para enviar:
+👉 https://wa.me/543813595069?text=Hola%2C%20mi%20usuario%20es%3A%20%0AAhora%20te%20env%C3%ADo%20el%20comprobante`;
+
+  document.getElementById("btn-derivar").addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(mensajeDerivacion);
+      mostrarNotificacion("Mensaje de derivación copiado al portapapeles ✅");
+    } catch (err) {
+      mostrarNotificacion("Error al copiar el mensaje", "error");
+      console.error(err);
+    }
+  });
 
 
 
