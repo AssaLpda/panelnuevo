@@ -652,9 +652,51 @@ document.getElementById('modalHistorialCompacto').addEventListener('click', e =>
 
 // Mensajes para info usuarios nuevos
 const mensajesInfoNuevos = [
-  `¡Hola! Bienvenido/a ❤️ Decime tu nombre asi te brindo un usuario para jugar`,
-  `¡Holis Bienvenida/o, decime tu nombre asi te creo un usuario 😊`,
-  `¡Buenaaas! Bienvenido/a!❤️ Decime tu nombre asi te creo un usuario para vos 🙌`
+  `Hola, ¿cómo andás? ¡Qué bueno que quieras sumarte a la diversión! 🎉🎰
+
+Primero te vamos a crear tu usuario y contraseña para ingresar a https://ganamos.bet/home
+
+👉 Para cargar fichas solo hace falta que hagas una transferencia bancaria, te paso el CBU.
+
+Podés cargar el monto que prefieras.
+
+💵 Carga mínima: $1500
+💵 Retiro mínimo: $3000
+
+📤 Los retiros también se hacen por CBU.
+
+⏰ Estamos disponibles 24/7 para que juegues cuando quieras.
+Si tenés alguna consulta, escribinos sin problema 🙌`,
+
+  `¡Hola! ¿Todo bien? Genial que quieras empezar a jugar con nosotros 🎲🔥
+
+Vamos a crear tu usuario y contraseña para que puedas acceder a https://ganamos.bet/home 🎰😊
+
+Para cargar fichas y jugar, solo tenés que hacer una transferencia bancaria. Te paso el CBU y podés ingresar el monto que prefieras.
+
+💲 Carga mínima: $1500
+💲 Retiro mínimo: $3000
+
+Los retiros también se hacen por transferencia a CBU 💸
+
+⚠️ Estamos disponibles las 24 horas, los 7 días de la semana para que juegues cuando quieras 🙌🏼
+
+Si tenés alguna consulta, no dudes en preguntarme 🙏🏼`,
+
+  `¡Hola! Qué bueno que te sumes a jugar con nosotros 🎰✨
+
+Te vamos a generar un usuario y clave para que puedas ingresar a https://ganamos.bet/home 🎰✨
+
+Para cargar fichas y empezar a jugar, solo tenés que hacer una transferencia bancaria. Te paso el CBU y podés acreditar el monto que desees.
+
+Monto mínimo para cargar: $1500 💲
+Monto mínimo para retirar: $3000 💲
+
+Los retiros de premios también se realizan por transferencia a CBU 💸
+
+⚠️ Estamos disponibles las 24 horas, todos los días de la semana para que disfrutes cuando quieras 🙌🏼
+
+Si necesitás ayuda o tenés alguna pregunta, podes escribirme sin problema 🙏🏼`
 ];
 
 let ultimoMensajeInfoNuevos = null;
@@ -706,9 +748,9 @@ function mostrarNotificacion(mensaje) {
 
 // Mensajes de bienvenida
 const mensajesBienvenida = [
-  `¡Hola! Bienvenido/a ❤️ Para poder crear tu usuario y contraseña, ¿me podés pasar tu nombre completo, por favor?`,
-  `¡Hola! ¿Me podrías decir tu nombre completo para crear tu usuario y contraseña y que puedas empezar a jugar? 😊`,
-  `¡Bienvenido/a!❤️ Para generar tu usuario y clave, necesito que me pases tu nombre completo, 🙌`
+   `¡Hola! Bienvenido/a ❤️ Decime tu nombre asi te brindo un usuario para jugar`,
+  `¡Holis Bienvenida/o, decime tu nombre asi te creo un usuario 😊`,
+  `¡Buenaaas! Bienvenido/a!❤️ Decime tu nombre asi te creo un usuario para vos 🙌`
 ];
 
 let ultimoMensajeBienvenida = null;
