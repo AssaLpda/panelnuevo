@@ -72,9 +72,9 @@ document.getElementById("crear-usuario").addEventListener("click", async () => {
   });
 
   const mensajes = [
-    `👉 El monto mínimo de carga es $1500 y el de retiro $3000\n\n🌐 Ingresá desde: https://ganamos.bet/home\n\n💳 Hacemos cargas y retiros todos los días, a toda hora 🚀\n\nAvisame si pudiste entrar así te paso los datos del CBU ✅`,
-    `Te recuerdo que la carga mínima es: $1500 \nRetiro mínimo: $3000\n🌐 Sitio web: https://ganamos.bet/home\n\nCargamos y retiramos las 24hs del día los 7 días de la semana al instante!`,
-    `📢 Te cuento que el mínimo para cargar es de $1500 y para retirar $3000.\n🌐 Sitio web: https://ganamos.biz/home\n\n💸 Trabajamos 24/7 con cargas y retiros instantáneos 🎲🔥\n\n¿Podés acceder? Así te paso el CBU 📲`
+    `👉 El monto mínimo de carga es $1500 y el de retiro $3000\n\n🌐 Ingresá desde: https://ganamos.net/home\n\n💳 Hacemos cargas y retiros todos los días, a toda hora 🚀\n\nAvisame si pudiste entrar así te paso los datos del CBU ✅`,
+    `Te recuerdo que la carga mínima es: $1500 \nRetiro mínimo: $3000\n🌐 Sitio web: https://ganamos.net/home\n\nCargamos y retiramos las 24hs del día los 7 días de la semana al instante!`,
+    `📢 Te cuento que el mínimo para cargar es de $1500 y para retirar $3000.\n🌐 Sitio web: https://ganamos.net/home\n\n💸 Trabajamos 24/7 con cargas y retiros instantáneos 🎲🔥\n\n¿Podés acceder? Así te paso el CBU 📲`
   ];
 
   const mensajeFinal = 
@@ -809,9 +809,9 @@ function mostrarNotificacion(mensaje) {
 // Plataforma web
 
 const mensajesPlataforma = [
-  `Nuestra plataforma es: https://www.ganamos.bet/home`,
-  `Te dejo la web: https://www.ganamos.bet/home`,
-  `Link para ingresar: https://www.ganamos.bet/home`
+  `Nuestra plataforma es: https://www.ganamos.net/home`,
+  `Te dejo la web: https://www.ganamos.net/home`,
+  `Link para ingresar: https://www.ganamos.net/home`
 ];
 
 let ultimoMensajePlataforma = null;
