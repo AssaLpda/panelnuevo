@@ -169,6 +169,8 @@ Avisame si pudiste entrar así te paso los datos del CBU ✅`,
 Retiro mínimo: $3000
 🌐 Sitio web: https://ganamos.bet/home
 
+Cuando ingreses, avisame asi te paso los datos para recargar
+
 Cargamos y retiramos las 24hs del día los 7 días de la semana al instante!`,
 
   `📢 Te cuento que el mínimo para cargar es de $1500 y para retirar $3000.
