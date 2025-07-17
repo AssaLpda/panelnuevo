@@ -652,9 +652,9 @@ document.getElementById('modalHistorialCompacto').addEventListener('click', e =>
 
 // Mensajes para info usuarios nuevos
 const mensajesInfoNuevos = [
-  `¡Hola! Bienvenido/a ❤️ Para poder crear tu usuario y contraseña, ¿me podés pasar tu nombre completo, por favor?`,
-  `¡Hola! ¿Me podrías decir tu nombre completo para crear tu usuario y contraseña y que puedas empezar a jugar? 😊`,
-  `¡Bienvenido/a!❤️ Para generar tu usuario y clave, necesito que me pases tu nombre completo, ¿podés? 🙌`
+  `¡Hola! Bienvenido/a ❤️ Decime tu nombre asi te brindo un usuario para jugar`,
+  `¡Holis Bienvenida/o, decime tu nombre asi te creo un usuario 😊`,
+  `¡Buenaaas! Bienvenido/a!❤️ Decime tu nombre asi te creo un usuario para vos 🙌`
 ];
 
 let ultimoMensajeInfoNuevos = null;
