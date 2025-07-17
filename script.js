@@ -759,9 +759,9 @@ function mostrarNotificacion(mensaje) {
 // Boton minimo de carga y retiro
 
 const mensajesMinimos = [
-  `📢 Te comento que:\n💵 Monto mínimo de carga: $1500\n💸 Monto mínimo de retiro: $3000`,
+  `📢 Te comento que:\n💵 El monto mínimo de carga: $1500\n💸 Monto mínimo de retiro: $3000`,
   `ℹ️ Importante a tener en cuenta:\n✅ Carga mínima: $1500 💰\n✅ Retiro mínimo: $3000 🏧`,
-  `📝 Te paso los montos mínimos:\n📥 Cargar fichas: desde $1500\n📤 Retirar premios: desde $3000`
+  `📝 Te paso los montos mínimos:\n📥 Carga minima: $1500\n📤 Retiro minimo: $3000`
 ];
 
 let ultimoMensajeMinimos = null;
