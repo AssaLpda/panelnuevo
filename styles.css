@@ -26,8 +26,12 @@ body {
     transition: background-color 0.2s ease;
 }
 .monto-btn:hover {
-    background-color: #e2e8f0;
+  background-color: #3b82f6; /* azul similar a bg-blue-500 */
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
+
 
 .monto-dropdown {
     position: absolute;
@@ -232,4 +236,24 @@ body {
   }
 
   
+.notificacion-toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #4ade80; /* verde claro */
+  color: #065f46; /* verde oscuro */
+  padding: 10px 20px;
+  border-radius: 9999px;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  opacity: 1;
+  transition: opacity 0.5s ease;
+  z-index: 9999;
+  user-select: none;
+  pointer-events: none;
+  font-size: 14px;
+  font-family: sans-serif;
+}
+
 

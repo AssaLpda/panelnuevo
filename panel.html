@@ -11,6 +11,10 @@
   <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-database-compat.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+
+
 
   <style>
     #panel-bonif {
@@ -27,6 +31,43 @@
   }
 
 </script>
+  
+
+    <!-- Panel de Usuarios -->
+    <div class="panel-box">
+      <h2 class="text-sm font-bold text-gray-800 mb-2">Panel de Usuarios</h2>
+      <div class="mb-2">
+        <div class="flex items-center gap-2">
+          <div class="flex-1">
+            <label class="block text-xs text-gray-600 mb-1.5">Usuario</label>
+            <input type="text" id="usuario-input" class="w-full input-compact border rounded" placeholder="Ingrese nombre" />
+          </div>
+          <button id="crear-usuario" class="btn-compact bg-emerald-600 hover:bg-emerald-700 text-white rounded flex items-center justify-center gap-1 mt-4" title="Crear nuevo usuario">
+            <i class="fas fa-user-plus text-xs"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap gap-1">
+        <button id="btn-desbloquear" class="btn-compact bg-blue-600 hover:bg-blue-700 text-white rounded flex items-center gap-1">
+          <i class="fas fa-unlock text-xs"></i> Desbloq.
+        </button>
+
+<!-- Contenedor para notificaciones -->
+<div id="notificacion" class="hidden fixed bottom-4 right-4 text-white px-4 py-2 rounded shadow-lg z-50"></div>
+
+
+        <button id="btn-reestablecer" class="btn-compact bg-purple-600 hover:bg-purple-700 text-white rounded flex items-center gap-1">
+          <i class="fas fa-sync-alt text-xs"></i> Reest.
+        </button>
+
+        <button id="btn-historial-usuario" class="btn-compact bg-gray-600 hover:bg-gray-700 text-white rounded flex items-center gap-1">
+          <i class="fas fa-list-alt text-xs"></i> Historial de usuario
+        </button>
+      </div>
+    </div>
+  </div>
+
   <div class="max-w-4xl mx-auto space-y-3">
 
     <!-- Panel de Carga -->
@@ -83,65 +124,22 @@
           <i class="fas fa-arrow-down text-xs"></i> Bajar
         </button>
 
-        <button id="btn-historial" class="btn-compact text-blue-600 hover:text-blue-800 rounded flex items-center gap-1">
-          <i class="fas fa-history text-xs"></i> Historial
-        </button>
+        <!-- Botón -->
+<button id="btn-historial" class="btn-compact text-blue-600 hover:text-blue-800 rounded flex items-center gap-1">
+  <i class="fas fa-history text-xs"></i> Historial
+</button>
       </div>
     </div>
 
-    <!-- Panel de Usuarios -->
-    <div class="panel-box">
-      <h2 class="text-sm font-bold text-gray-800 mb-2">Panel de Usuarios</h2>
-      <div class="mb-2">
-        <div class="flex items-center gap-2">
-          <div class="flex-1">
-            <label class="block text-xs text-gray-600 mb-1.5">Usuario</label>
-            <input type="text" id="usuario-input" class="w-full input-compact border rounded" placeholder="Ingrese nombre" />
-          </div>
-          <button id="crear-usuario" class="btn-compact bg-emerald-600 hover:bg-emerald-700 text-white rounded flex items-center justify-center gap-1 mt-4" title="Crear nuevo usuario">
-            <i class="fas fa-user-plus text-xs"></i>
-          </button>
-        </div>
-      </div>
+  
+<button id="btn-modo-oscuro" title="Alternar modo oscuro" aria-label="Alternar modo oscuro"
+  class="fixed bottom-6 right-6 bg-yellow-400 hover:bg-yellow-500 text-gray-800 rounded-full w-12 h-12 flex items-center justify-center shadow-lg z-50">
+  <i class="fas fa-lightbulb"></i>
+</button>
 
-      <div class="flex flex-wrap gap-1">
-        <button id="btn-desbloquear" class="btn-compact bg-blue-600 hover:bg-blue-700 text-white rounded flex items-center gap-1">
-          <i class="fas fa-unlock text-xs"></i> Desbloq.
-        </button>
+  
 
-        <button id="btn-reestablecer" class="btn-compact bg-purple-600 hover:bg-purple-700 text-white rounded flex items-center gap-1">
-          <i class="fas fa-sync-alt text-xs"></i> Reest.
-        </button>
-
-        <button id="btn-historial-usuario" class="btn-compact bg-gray-600 hover:bg-gray-700 text-white rounded flex items-center gap-1">
-          <i class="fas fa-list-alt text-xs"></i> Historial de usuario
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Botón flotante para alternar modo oscuro -->
-  <button id="btn-modo-oscuro" title="Alternar modo oscuro" aria-label="Alternar modo oscuro">
-    <i class="fas fa-lightbulb"></i>
-  </button>
-
-  <!-- Modal Historial General -->
-  <div id="modal-historial" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
-    <div class="bg-white rounded-lg max-w-xl w-full p-4 relative max-h-[80vh] overflow-auto">
-      <h3 class="text-lg font-bold mb-4">Historial de Cargas y Retiros (últimas 5 horas)</h3>
-      <button id="cerrar-modal" class="absolute top-2 right-2 text-gray-600 hover:text-gray-900 text-xl font-bold">&times;</button>
-      <div id="contenido-historial" class="space-y-2 max-h-[60vh] overflow-auto"></div>
-    </div>
-  </div>
-
-  <!-- Modal Historial Usuario -->
-  <div id="modal-historial-usuario" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
-    <div class="bg-white rounded-lg max-w-lg w-full p-4 relative max-h-[80vh] overflow-auto">
-      <button id="cerrar-modal-usuario" class="absolute top-2 right-2 text-gray-600 hover:text-gray-900 text-xl font-bold">&times;</button>
-      <h3 class="text-lg font-semibold mb-4">Historial de Movimientos del Usuario</h3>
-      <div id="contenido-historial-usuario" class="space-y-2 max-h-[60vh] overflow-auto text-sm"></div>
-    </div>
-  </div>
+  
   <!-- Sección Mensajes -->
 <div class="panel-box">
   <h2 class="text-sm font-bold text-gray-800 mb-2">Usuarios nuevos</h2>
@@ -149,6 +147,8 @@
     <button id="btn-info-nuevos" class="btn-compact bg-indigo-600 hover:bg-indigo-700 text-white rounded flex items-center gap-1">
       <i class="fas fa-info-circle text-xs"></i> Info usuarios nuevos
     </button>
+   
+
 
     <button id="btn-bienvenida" class="btn-compact bg-teal-600 hover:bg-teal-700 text-white rounded flex items-center gap-1">
       <i class="fas fa-envelope-open-text text-xs"></i> Mensaje de bienvenida
@@ -206,22 +206,113 @@
 </div>
 
 
-<!-- Modal Tope de Retiros -->
-<div id="modal-tope-retiros" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
-  <div class="bg-white rounded-lg shadow-lg w-full max-w-sm p-4 text-sm">
-    <h2 class="text-base font-semibold text-center mb-3">💰 Tope de Retiros según Cargas</h2>
-    <ul class="space-y-1 text-gray-800">
+<!-- LISTADO DE MODALES ACA ABAJOOOO-->
+
+<!-- Modal de error mejorado -->
+<div id="modal-error" class="hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50">
+  <div class="bg-white rounded-lg shadow-lg max-w-md w-full p-6 mx-4">
+    <h2 class="text-xl font-semibold text-red-600 mb-4 flex items-center gap-2">
+      <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4m0 4h.01M12 2a10 10 0 1010 10A10 10 0 0012 2z"/>
+      </svg>
+      Atención
+    </h2>
+    <div id="modal-mensaje" class="text-gray-800 mb-6 text-center text-base"></div>
+    <button id="cerrar-modal-error" class="w-full bg-red-600 hover:bg-red-700 text-white font-semibold rounded py-2 transition-colors duration-200">
+      Cerrar
+    </button>
+  </div>
+</div>
+
+<!-- Modal Historial en Lista -->
+<div id="modalHistorialCompacto" class="fixed inset-0 bg-black/60 flex items-center justify-center z-50 hidden">
+  <div class="bg-neutral-900 w-full max-w-sm rounded-xl p-4 shadow-lg border border-neutral-700">
+    <div class="flex justify-between items-center mb-3">
+      <h2 class="text-white text-base font-semibold">📄 Historial de Movimientos</h2>
+      <button id="cerrarHistorialCompacto" class="text-gray-400 hover:text-white text-sm">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+    <ul id="contenedorHistorialCompacto" class="space-y-1 max-h-[350px] overflow-y-auto text-sm text-white">
+      <!-- Ejemplo de carga -->
+      <!--
+      <li class="flex justify-between items-center bg-green-800/40 px-3 py-2 rounded">
+        <span class="font-medium">💰 Carga de $5000</span>
+        <span class="text-xs text-gray-300">16/07 14:32</span>
+      </li>
+
+      <li class="flex justify-between items-center bg-red-800/40 px-3 py-2 rounded">
+        <span class="font-medium">🔻 Retiro de $2000</span>
+        <span class="text-xs text-gray-300">16/07 18:21</span>
+      </li>
+      -->
+    </ul>
+  </div>
+</div>
+
+
+
+
+<div id="modalHistorialCompacto" class="fixed inset-0 bg-black bg-opacity-60 flex justify-center items-center z-50 hidden">
+  <div class="bg-gray-900 text-white rounded-xl shadow-lg w-full max-w-md mx-4 overflow-hidden">
+    <div class="flex justify-between items-center px-4 py-3 border-b border-gray-700">
+      <h2 class="text-lg font-bold">Historial General</h2>
+      <button id="cerrarHistorialCompacto" class="text-gray-400 hover:text-red-400">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div id="contenedorHistorialCompacto" class="p-4 space-y-3 max-h-[60vh] overflow-y-auto text-sm">
+
+
+      <!-- Movimientos se agregan por JS -->
+    </div>
+    <div class="text-center text-gray-500 text-xs py-2 bg-gray-800 border-t border-gray-700">
+      Últimos movimientos registrados
+    </div>
+  </div>
+</div>
+
+<!-- Modal confirmación bonificación -->
+<div id="modalConfirmacionBonif" class="hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50">
+  <div class="bg-white rounded-lg shadow-lg max-w-sm w-full p-6 mx-4 text-center">
+    <h3 class="text-xl font-semibold mb-4">Bonificación aplicada</h3>
+    <p id="textoBonif" class="mb-6 text-lg"></p>
+    <button id="cerrarModalBonif" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded transition-colors duration-200">
+      Cerrar
+    </button>
+  </div>
+</div>
+
+
+<!-- Modal Historial Usuario -->
+<div id="modal-historial-usuario" class="hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50">
+  <div class="bg-white rounded-lg shadow-lg max-w-lg w-full p-6 mx-4 max-h-[80vh] overflow-auto">
+    <h2 class="text-xl font-semibold mb-4">Historial de usuario</h2>
+    <ul id="lista-historial-usuario" class="list-disc pl-5 space-y-1 max-h-[60vh] overflow-auto text-sm"></ul>
+    <button id="cerrar-modal-historial-usuario" class="mt-4 w-full bg-gray-700 hover:bg-gray-800 text-white font-semibold rounded py-2 transition-colors duration-200">
+      Cerrar
+    </button>
+  </div>
+</div>
+
+
+
+
+<!-- MODAL -->
+<div id="modal-tope-retiros" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+  <div class="bg-white text-black dark:bg-gray-800 dark:text-white rounded-lg shadow-lg w-11/12 max-w-md p-6 relative">
+    <!-- Botón cerrar -->
+    <button id="cerrar-modal-tope" class="absolute top-2 right-3 text-gray-400 hover:text-red-500 text-lg">&times;</button>
+    
+    <h2 class="text-lg font-bold mb-4 text-center">📋 Topes de Retiro</h2>
+    <ul class="list-disc pl-5 space-y-2 text-sm">
       <li><strong>$1.500 a $14.000:</strong> Retiro máximo $50.000</li>
       <li><strong>$15.000 a $29.000:</strong> Retiro máximo $75.000</li>
       <li><strong>$30.000 a $49.000:</strong> Retiro máximo $100.000</li>
       <li><strong>$50.000 a $74.000:</strong> Retiro máximo $125.000</li>
       <li><strong>$75.000 o más:</strong> Retiro máximo el doble o consultar</li>
     </ul>
-    <div class="mt-4 text-center">
-      <button id="cerrar-modal-tope" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-1 rounded text-xs">
-        Cerrar
-      </button>
-    </div>
   </div>
 </div>
 
@@ -241,29 +332,43 @@
       <input type="text" id="input-alias" class="w-full border rounded px-2 py-1 text-sm" placeholder="Alias bancario">
     </div>
   </div>
-  <button id="btn-guardar-datos" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-1 rounded text-xs mt-2">
-    Guardar Datos
-  </button>
-  <button id="btn-descargar-retiros" class="bg-yellow-600 hover:bg-blue-700 text-white px-4 py-2 rounded text-sm">
-  📥 Descargar Retiros por Turno
+  <!-- Botón para habilitar edición -->
+<button id="btn-editar-datos" class="bg-yellow-500 hover:bg-blue-600 text-black px-4 py-1 rounded text-xs mt-2">
+  Editar Datos
 </button>
 
+<!-- Botón guardar -->
+<button id="btn-guardar-datos" class="bg-green-500 hover:bg-green-600 text-white px-4 py-1 rounded text-xs mt-2 hidden">
+  Guardar Datos
+</button>
+
+<button id="btn-abrir-modal-retiros" class="bg-yellow-600 px-4 py-2 rounded text-white">Descargar Retiros</button>
+
 </div>
 
-<!-- Modal Selección de Turno para Retiros -->
-<div id="modal-turnos-retiros" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
-  <div class="bg-white rounded-lg p-6 w-80">
-    <h2 class="text-lg font-semibold mb-4">Seleccioná el turno para descargar retiros</h2>
-    <div class="flex flex-col gap-3">
-      <button class="btn-turno-retiro bg-blue-500 text-white py-2 rounded" data-turno="02-10">02 - 10 AM</button>
-      <button class="btn-turno-retiro bg-blue-500 text-white py-2 rounded" data-turno="10-18">10 - 18 PM</button>
-      <button class="btn-turno-retiro bg-blue-500 text-white py-2 rounded" data-turno="18-02">18 - 02 AM</button>
-    </div>
-    <button id="cerrar-modal-retiros" class="mt-4 text-gray-600 hover:text-gray-900 text-sm">Cancelar</button>
+<!-- Modal selector de retiros -->
+<div id="modal-retiros" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden transition-opacity duration-300">
+  <div class="bg-white dark:bg-gray-900 rounded-lg shadow-xl max-w-md w-full p-6 relative mx-4">
+    <!-- Botón cerrar -->
+    <button id="cerrar-modal-retiros" class="absolute top-3 right-3 text-gray-400 hover:text-red-500 text-2xl font-bold transition-colors" aria-label="Cerrar modal">&times;</button>
+
+    <h2 class="text-2xl font-semibold mb-6 text-gray-900 dark:text-gray-100 text-center">Seleccioná fecha y turno</h2>
+
+    <label for="input-fecha-retiros" class="block text-gray-700 dark:text-gray-300 mb-2 font-medium">Fecha:</label>
+    <input type="date" id="input-fecha-retiros" class="w-full p-2 rounded border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-yellow-400 mb-6" />
+
+    <label for="select-turno-retiros" class="block text-gray-700 dark:text-gray-300 mb-2 font-medium">Turno:</label>
+    <select id="select-turno-retiros" class="w-full p-2 rounded border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-yellow-400 mb-6">
+      <option value="turno1">02:00 - 10:00</option>
+      <option value="turno2">10:00 - 18:00</option>
+      <option value="turno3">18:00 - 02:00</option>
+    </select>
+
+    <button id="btn-confirmar-retiros" class="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-2 rounded shadow-md transition-colors">
+      Descargar PDF
+    </button>
   </div>
 </div>
-
-
 
 
 
@@ -274,6 +379,9 @@
   <div id="notificacion" class="fixed bottom-4 right-4 bg-green-500 text-white px-4 py-2 rounded shadow-lg hidden transition-all duration-300 z-50">
     Notificación
   </div>
+
+
+  
 
   <script src="script.js"></script>
 </body>
