@@ -1278,7 +1278,7 @@ const mensajesFelicitaciones = [
 Solo tienen que mencionar tu usuario ¡y listo! Las fichas son tuyas 💎
 ¡Dale que se viene lo bueno! 🚀🔥`,
 
-  `¡Hola! Celeste te saluda 🙋‍♀️
+  `Holiss, Celeste te saluda 🙋‍♀️
 📲 Agendame así estás al tanto de todas las promos 🎉
 Cada vez que un amigo mencione tu usuario y haga su carga, te llevás $3000 para tu próxima recarga 💰🎰
 ¡No te lo pierdas! Lo que viene, viene con todo 🚀🔥`,
