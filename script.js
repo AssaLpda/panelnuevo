@@ -72,9 +72,9 @@ document.getElementById("crear-usuario").addEventListener("click", async () => {
   });
 
   const mensajes = [
-    `👉 El monto mínimo de carga es $1500 y el de retiro $3000\n\n🌐 Ingresá desde: https://ganamos.bet/home\n\n💳 Hacemos cargas y retiros todos los días, a toda hora 🚀\n\nAvisame si pudiste entrar así te paso los datos del CBU ✅`,
+    `El monto mínimo de carga es $1500 y el de retiro $3000\n\n🌐 Ingresá desde: https://ganamos.bet/home\n\n💳 Hacemos cargas y retiros todos los días, a toda hora \n\nAvisame si pudiste entrar así te paso los datos del CBU ✅`,
     `Te recuerdo que la carga mínima es: $1500 \nRetiro mínimo: $3000\n🌐 Sitio web: https://ganamos.bet/home\n\nCargamos y retiramos las 24hs del día los 7 días de la semana al instante!\n\nAvisame si pudiste entrar así te paso los datos del CBU ✅`,
-    `📢 Te cuento que el mínimo para cargar es de $1500 y para retirar $3000.\n🌐 Sitio web: https://ganamos.bet/home\n\n💸 Trabajamos 24/7 con cargas y retiros instantáneos 🎲🔥\n\n¿Podés acceder? Así te paso el CBU 📲`
+    `Te cuento que el mínimo para cargar es de $1500 y para retirar $3000.\n🌐 Sitio web: https://ganamos.bet/home\n\n💸 Trabajamos 24/7 con cargas y retiros instantáneos \n\n¿Podés acceder? Así te paso el CBU `
   ];
 
   const mensajeFinal = 
@@ -652,49 +652,49 @@ document.getElementById('modalHistorialCompacto').addEventListener('click', e =>
 
 // Mensajes para info usuarios nuevos
 const mensajesInfoNuevos = [
-  `Hola, ¿cómo andás? ¡Qué bueno que quieras sumarte a la diversión! 🎉🎰
+  `Hola, ¿cómo andás? ¡Qué bueno que quieras sumarte a la diversión! 
 
 Primero te vamos a crear tu usuario y contraseña para ingresar a https://ganamos.bet/home
 
-👉 Para cargar fichas solo hace falta que hagas una transferencia bancaria, te paso el CBU.
+ Para cargar fichas solo hace falta que hagas una transferencia bancaria, te paso el CBU.
 
 Podés cargar el monto que prefieras.
 
-💵 Carga mínima: $1500
-💵 Retiro mínimo: $3000
+ Carga mínima: $1500
+ Retiro mínimo: $3000
 
-📤 Los retiros también se hacen por CBU.
+ Los retiros también se hacen por CBU.
 
-⏰ Estamos disponibles 24/7 para que juegues cuando quieras.
-Si tenés alguna consulta, escribinos sin problema 🙌`,
+ Estamos disponibles 24/7 para que juegues cuando quieras.
+Si tenés alguna consulta, escribinos sin problema `,
 
-  `¡Hola! ¿Todo bien? Genial que quieras empezar a jugar con nosotros 🎲🔥
+  `¡Hola! ¿Todo bien? Genial que quieras empezar a jugar con nosotros 
 
-Vamos a crear tu usuario y contraseña para que puedas acceder a https://ganamos.bet/home 🎰😊
+Vamos a crear tu usuario y contraseña para que puedas acceder a https://ganamos.bet/home 
 
 Para cargar fichas y jugar, solo tenés que hacer una transferencia bancaria. Te paso el CBU y podés ingresar el monto que prefieras.
 
-💲 Carga mínima: $1500
-💲 Retiro mínimo: $3000
+ Carga mínima: $1500
+ Retiro mínimo: $3000
 
 Los retiros también se hacen por transferencia a CBU 💸
 
-⚠️ Estamos disponibles las 24 horas, los 7 días de la semana para que juegues cuando quieras 🙌🏼
+ Estamos disponibles las 24 horas, los 7 días de la semana para que juegues cuando quieras 
 
 Si tenés alguna consulta, no dudes en preguntarme 🙏🏼`,
 
-  `¡Hola! Qué bueno que te sumes a jugar con nosotros 🎰✨
+  `¡Hola! Qué bueno que te sumes a jugar con nosotros 
 
-Te vamos a generar un usuario y clave para que puedas ingresar a https://ganamos.bet/home 🎰✨
+Te vamos a generar un usuario y clave para que puedas ingresar a https://ganamos.bet/home 
 
 Para cargar fichas y empezar a jugar, solo tenés que hacer una transferencia bancaria. Te paso el CBU y podés acreditar el monto que desees.
 
-Monto mínimo para cargar: $1500 💲
-Monto mínimo para retirar: $3000 💲
+Monto mínimo para cargar: $1500 
+Monto mínimo para retirar: $3000 
 
-Los retiros de premios también se realizan por transferencia a CBU 💸
+Los retiros de premios también se realizan por transferencia a CBU 
 
-⚠️ Estamos disponibles las 24 horas, todos los días de la semana para que disfrutes cuando quieras 🙌🏼
+Estamos disponibles las 24 horas, todos los días de la semana para que disfrutes cuando quieras
 
 Si necesitás ayuda o tenés alguna pregunta, podes escribirme sin problema 🙏🏼`
 ];
@@ -749,8 +749,8 @@ function mostrarNotificacion(mensaje) {
 // Mensajes de bienvenida
 const mensajesBienvenida = [
    `¡Hola! Bienvenido/a ❤️ Decime tu nombre asi te brindo un usuario para jugar`,
-  `¡Holis Bienvenida/o, decime tu nombre asi te creo un usuario 😊`,
-  `¡Buenaaas! Bienvenido/a!❤️ Decime tu nombre asi te creo un usuario para vos 🙌`
+  `¡Holis Bienvenida/o, decime tu nombre asi te creo un usuario`,
+  `¡Buenaaas! Bienvenido/a!❤️ Decime tu nombre asi te creo un usuario para vos`
 ];
 
 let ultimoMensajeBienvenida = null;
@@ -801,9 +801,9 @@ function mostrarNotificacion(mensaje) {
 // Boton minimo de carga y retiro
 
 const mensajesMinimos = [
-  `📢 Te comento que:\n💵 El monto mínimo de carga: $1500\n💸 Monto mínimo de retiro: $3000`,
-  `ℹ️ Importante a tener en cuenta:\n✅ Carga mínima: $1500 💰\n✅ Retiro mínimo: $3000 🏧`,
-  `📝 Te paso los montos mínimos:\n📥 Carga minima: $1500\n📤 Retiro minimo: $3000`
+  `Te comento que:\n El monto mínimo de carga: $1500\n Monto mínimo de retiro: $3000`,
+  ` Carga mínima: $1500 \n Retiro mínimo: $3000`,
+  `Te paso los montos mínimos:\n Carga minima: $1500\n Retiro minimo: $3000`
 ];
 
 let ultimoMensajeMinimos = null;
@@ -1020,9 +1020,9 @@ function mostrarNotificacionContactanos(mensaje) {
 // Boton info referidos
 
 const mensajesReferidos = [
-  `🎉 ¡Sumá fichas gratis invitando amigos con nuestro plan de referidos!
+  `¡Sumá fichas gratis invitando amigos con nuestro plan de referidos!
 
-Por cada amigo que invites y realice su primer depósito, recibís 3000 fichas para usar en tu próxima carga 🎰🎁
+Por cada amigo que invites y realice su primer depósito, recibís 3000 fichas para usar en tu próxima carga 🎁
 
 Pídanle que mencionen tu usuario para poder acreditar la bonificación ☘️
 
@@ -1034,9 +1034,9 @@ Las bonificaciones son para jugar, no para retirar`,
 
   `🎉 ¡Sumate a nuestro programa de referidos y llevate fichas gratis!
 
-Por cada amigo que invites y haga su primera carga, te regalamos 3000 fichas para usar en tu próxima recarga 🎰🎁
+Por cada amigo que invites y haga su primera carga, te regalamos 3000 fichas para usar en tu próxima recarga 🎁
 
-Solo pediles que mencionen tu nombre de usuario al cargar para que puedas recibir la bonificación ☘️
+Solo pediles que mencionen tu nombre de usuario al cargar para que puedas recibir la bonificación
 
 El bono se activa después de la carga inicial del referido y se suma en tu siguiente recarga.
 
@@ -1046,7 +1046,7 @@ Las bonificaciones son solo para jugar, no se pueden retirar.`,
 
   `🎉 ¡Invitá a tus amigos y ganá fichas gratis con nuestro plan de referidos!
 
-Cada amigo que venga de tu parte y realice su primera carga te suma 3000 fichas extras para tu próxima recarga 🎰🎁
+Cada amigo que venga de tu parte y realice su primera carga te suma 3000 fichas extras para tu próxima recarga🎁
 
 Solo asegurate que digan tu nombre de usuario al hacer la carga para acreditarte el bono ☘️
 
@@ -1077,10 +1077,10 @@ document.getElementById('btn-info-referidos').addEventListener('click', async ()
 
 const mensajeDerivar = `Te pido que por favor envíes el comprobante al número principal junto con el nombre de usuario que se te asignó, así pueden cargarte al instante 👇
 
-📲 +543815154196
+ +543815154196
 
-Para que sea más fácil, podés hacer clic en este link y te deriva directo a nuestro chat para enviar:
-👉 https://wa.me/543815154196?text=Hola%2C%20mi%20usuario%20es%3A%20%0AAhora%20te%20env%C3%ADo%20el%20comprobante`;
+Podés hacer click en este link y te deriva directo a nuestro chat:
+ https://wa.me/543815154196?text=Hola%2C%20mi%20usuario%20es%3A%20%0AAhora%20te%20env%C3%ADo%20el%20comprobante`;
 
 document.getElementById('btn-derivar').addEventListener('click', async () => {
   const copiado = await copiarAlPortapapeles(mensajeDerivar);
@@ -1093,14 +1093,14 @@ document.getElementById('btn-derivar').addEventListener('click', async () => {
 
 const mensajesCBU = [
   (titular, cbu, alias) => 
-    `¡Hola! ¿Todo bien? 😊
+    `¡Hola! ¿Todo bien?
 
-💳 Te paso los datos para transferir:
+ Te paso los datos para transferir:
 Alias: ${alias}
 CBU: ${cbu}
-🧾 A nombre de: ${titular}
+ A nombre de: ${titular}
 
-Mandame el comprobante y te acredito las fichas 🎰
+Mandame el comprobante y te acredito las fichas 
 ⚠️ Siempre revisá el alias antes de hacer la transferencia.`,
 
   (titular, cbu, alias) =>
@@ -1111,23 +1111,23 @@ Titular: ${titular}
 CBU: ${cbu}
 Alias: ${alias}
 
-📩 Enviame el comprobante cuando termines y te acredito al toque 🎰
-⚠️ Verificá el alias antes de transferir.`,
+ Enviame el comprobante cuando termines y te acredito al toque 🎰
+ Verificá el alias antes de transferir.`,
 
   (titular, cbu, alias) =>
     `¡Hola! 😊 Te paso los datos para que puedas hacer la transferencia:
 
-🏦 CBU: ${cbu}
-📛 Alias: ${alias}
-👤 A nombre de: ${titular}
+ CBU: ${cbu}
+ Alias: ${alias}
+ A nombre de: ${titular}
 
-📩 Mandame el comprobante una vez que transfieras y te cargo las fichas 🎰
-⚠️ Siempre chequeá que el alias sea correcto antes de enviar.`,
+ Mandame el comprobante una vez que transfieras y te cargo las fichas 🎰
+ Siempre chequeá que el alias sea correcto antes de enviar.`,
 
   (titular, cbu, alias) =>
     `💳 Te paso los datos para transferir:
 
-🧾 A nombre de: ${titular}
+ A nombre de: ${titular}
 CBU: ${cbu}
 Alias: ${alias}
 
@@ -1137,22 +1137,22 @@ Mandame el comprobante y te acredito las fichas 🎰
   (titular, cbu, alias) =>
     `Acá van los datos para cargar tus fichas:
 
-💳 CBU: ${cbu}
-📌 Alias: ${alias}
-👤 Titular: ${titular}
+ CBU: ${cbu}
+ Alias: ${alias}
+ Titular: ${titular}
 
-📩 Enviame el comprobante cuando termines y te acredito al toque 🎰
+ Enviame el comprobante cuando termines y te acredito al toque 🎰
 ⚠️ Verificá el alias antes de transferir.`,
 
   (titular, cbu, alias) =>
     `Te paso los datos para que puedas hacer la transferencia:
 
-📛 Alias: ${alias}
-🏦 CBU: ${cbu}
-👤 A nombre de: ${titular}
+ Alias: ${alias}
+ CBU: ${cbu}
+ A nombre de: ${titular}
 
-📩 Mandame el comprobante una vez que transfieras y te cargo las fichas 🎰
-⚠️ Siempre chequeá que el alias sea correcto antes de enviar.`
+ Mandame el comprobante una vez que transfieras y te cargo las fichas 🎰
+ Siempre chequeá que el alias sea correcto antes de enviar.`
 ];
 
 function mostrarNotificacion(mensaje) {
@@ -1243,9 +1243,9 @@ document.getElementById('btn-info-retiro').addEventListener('click', async () =>
 
 
 const mensajesFelicitaciones = [
-    "🎉 ¡Felicitaciones por ese premio! Te cuento que para que sigas jugando sin parar, por cada amigo que refieras y cargue, te regalo $3000 para tu próxima recarga. 🍀🎰 ¡No lo dejes pasar, compartí y ganá!",
-    "🎊 ¡Excelente  ese premio que ganaste! Te comento ademas que por cada amigo que invites y realice su carga, recibís $3000 para usar en tu próxima recarga. 🍀🎰 ¡Seguí jugando y compartiendo la diversión!",
-    "🎉 ¡Genial, te felicito por ese premio!  Recorda que por cada amigo que traigas y que cargue, te doy $3000 para tu próxima carga. 🍀🎰 ¡Aprovechá y seguí ganando con tus referidos!"
+    "🎉 ¡Felicitaciones por ese premio! Te cuento que para que sigas jugando sin parar, por cada amigo que refieras y cargue, te regalo $3000 para tu próxima recarga. 🍀¡No lo dejes pasar, compartí y ganá!",
+    "🎊 ¡Excelente  ese premio que ganaste! Te comento ademas que por cada amigo que invites y realice su carga, recibís $3000 para usar en tu próxima recarga. 🍀 ¡Seguí jugando y compartiendo la diversión!",
+    "🎉 ¡Genial, te felicito por ese premio!  Recorda que por cada amigo que traigas y que cargue, te doy $3000 para tu próxima carga. 🍀 ¡Aprovechá y seguí ganando con tus referidos!"
   ];
 
   document.getElementById('btn-felicitaciones').addEventListener('click', async () => {
@@ -1274,18 +1274,18 @@ const mensajesFelicitaciones = [
 
  const mensajesAgendame = [
   `🙋‍♀️ ¡Celeste acá! 📲 Agendame así no te perdés ninguna promo 🎉
-¿Sabías que por cada referido te regalo $3000 para tu próxima carga? 🎰💰
-Solo tienen que mencionar tu usuario ¡y listo! Las fichas son tuyas 💎
-¡Dale que se viene lo bueno! 🚀🔥`,
+¿Sabías que por cada referido te regalo $3000 para tu próxima carga? 
+Solo tienen que mencionar tu usuario ¡y listo! Las fichas son tuyas 
+¡Dale que se viene lo bueno! 🔥`,
 
-  `Holiss, Celeste te saluda 🙋‍♀️
+  `Holiss, Celeste te saluda
 📲 Agendame así estás al tanto de todas las promos 🎉
-Cada vez que un amigo mencione tu usuario y haga su carga, te llevás $3000 para tu próxima recarga 💰🎰
-¡No te lo pierdas! Lo que viene, viene con todo 🚀🔥`,
+Cada vez que un amigo mencione tu usuario y haga su carga, te llevás $3000 para tu próxima recarga 
+¡No te lo pierdas! Lo que viene, viene con todo 🔥`,
 
   `🙋‍♀️ Soy Celeste, ¡agendame! 📲 Así no te perdés ninguna novedad ni promo 🎉
-🎰 Por cada persona que refieras y cargue fichas, ganás $3000 para usar en tu próxima carga 💸
-Solo deben decir tu usuario y listo. ¡Vamos con toda! 🚀🔥`
+ Por cada persona que refieras y cargue fichas, ganás $3000 para usar en tu próxima carga 💸
+Solo deben decir tu usuario y listo. ¡Vamos con toda! 🔥`
 ];
 
 function copiarAlPortapapeles(texto) {
