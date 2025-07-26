@@ -743,6 +743,34 @@ function mostrarNotificacion(mensaje) {
   }, 2500);
 }
 
+//Boton de saludo 
+
+document.getElementById("btn-saludos-inicio").addEventListener("click", function () {
+    const saludos = [
+      "Holaa, como estas? Bienvenid@, decime tu usuario por favor",
+      "Buenaas, que tal? Bienvenido/a, decime tu usuario",
+      "Buenaas, como te va? Decime tu usuario porfiss"
+    ];
+
+    const saludo = saludos[Math.floor(Math.random() * saludos.length)];
+
+    navigator.clipboard.writeText(saludo).then(() => {
+      mostrarNotificacion("Saludo copiado al portapapeles");
+    }).catch(err => {
+      console.error("Error al copiar:", err);
+    });
+  });
+
+  function mostrarNotificacion(mensaje) {
+    const noti = document.getElementById("notificacion-saludo");
+    noti.textContent = mensaje;
+    noti.classList.remove("hidden");
+    noti.classList.add("opacity-100");
+
+    setTimeout(() => {
+      noti.classList.add("hidden");
+    }, 2500); // se oculta después de 2.5 segundos
+  }
 
 // Boton de bienvenida
 
