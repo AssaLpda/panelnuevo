@@ -1267,6 +1267,19 @@ document.getElementById('btn-info-retiro').addEventListener('click', async () =>
   }
 });
 
+// Boton de Ahora en mas
+
+document.getElementById("btn-de-ahora").addEventListener("click", function () {
+    const mensaje = "De ahora en mas para CARGAR/RETIRAR tenes que comunicarte con este numero exclusivamente♥";
+
+    navigator.clipboard.writeText(mensaje).then(() => {
+      mostrarNotificacion("Mensaje copiado al portapapeles");
+    }).catch(err => {
+      console.error("Error al copiar:", err);
+    });
+  });
+
+
 // Boton Felicitaciones
 
 
